@@ -24,7 +24,6 @@ function getDim(){
   } else{
   gridDimensions.textContent = `${currentDimensions} X ${currentDimensions}`;
   }
-  console.log(currentDimensions);
 }
 
 createGridButton.textContent = "Create New Grid";
@@ -54,7 +53,7 @@ function createGrid() {
   grid.style.gridTemplateRows = `repeat(${currentDimensions}, 1fr)`
   
   function changeColor(target){
-    if(currentMode == 'rainbow'){
+    if(currentMode == 'color'){
       randomColor();
       currentColor = rgb;
       target.style.background = currentColor;
@@ -69,15 +68,19 @@ function createGrid() {
     cell.classList.add('cell')
     cell.style.border = "1px solid black";
     cell.addEventListener('click', () => (
-    changeColor()
+    changeColor(cell)
     ));
     grid.appendChild(cell)
   }
 }
 
+function clear(){
+  grid.innerHTML = ''
+}
 createGrid()
 
 createGridButton.addEventListener('click', () => (
+  clear(),
   getDim(),
   createGrid()
   ))
