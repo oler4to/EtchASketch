@@ -52,8 +52,15 @@ function randomColor() {
 }
 
 function createGrid() {
-  grid.style.gridTemplateColumn = `repeat(${currentDimensions}, 1fr)`
+  grid.style.gridTemplateColumns = `repeat(${currentDimensions}, 1fr)`
   grid.style.gridTemplateRows = `repeat(${currentDimensions}, 1fr)`
   
-  
+  for(i = 0; i < (currentDimensions * currentDimensions); i++){
+    let cell = document.createElement('div')
+    cell.classList.add('cell')
+    cell.style.border = "1px solid black"
+    grid.appendChild(cell)
+  }
 }
+
+createGrid()
