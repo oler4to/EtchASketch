@@ -1,15 +1,20 @@
 body {
-  margin: 0;
+  margin: 20px;
   padding: 0;
   font-family: Sans-Serif;
-  background-color: rgb(234,234,234);
+  background-color: rgb(234,235,255);
 }
-
+h1{
+  color: #6c7dcf;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 20px;
+}
 #container {
-  margin: 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr) ;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   grid-gap: 20px;
 }
