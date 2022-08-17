@@ -53,12 +53,23 @@ function createGrid() {
   grid.style.gridTemplateColumns = `repeat(${currentDimensions}, 1fr)`
   grid.style.gridTemplateRows = `repeat(${currentDimensions}, 1fr)`
   
+  function changeColor(target){
+    if(currentMode == 'rainbow'){
+      randomColor();
+      currentColor = rgb;
+      target.style.background = currentColor;
+    } else if(currentMode == 'default'){
+      currentColor = defaultColor;
+      target.style.background = currentColor;
+    }
+  }
+  
   for(i = 0; i < (currentDimensions * currentDimensions); i++){
     let cell = document.createElement('div')
     cell.classList.add('cell')
     cell.style.border = "1px solid black";
     cell.addEventListener('click', () => (
-    cell.style.background = currentColor
+    changeColor()
     ));
     grid.appendChild(cell)
   }
