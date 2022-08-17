@@ -56,9 +56,13 @@ function createGrid() {
   grid.style.gridTemplateRows = `repeat(${currentDimensions}, 1fr)`
   
   for(i = 0; i < (currentDimensions * currentDimensions); i++){
+    randomColor()
     let cell = document.createElement('div')
     cell.classList.add('cell')
-    cell.style.border = "1px solid black"
+    cell.style.border = "1px solid black";
+    cell.addEventListener('click', () => (
+    cell.style.background = rgb
+    ));
     grid.appendChild(cell)
   }
 }
