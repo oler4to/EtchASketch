@@ -1,0 +1,7 @@
+const container = document.querySelector('#container')
+const grid = document.querySelector('#grid')
+const gridDimensions = document.querySelector('#gridDimensions')
+const buttons = document.querySelector('#buttons')
+const createGrid = document.createElement('button')
+const defaultButton = document.createElement('button')
+const colorButton = document.createElement('button')
