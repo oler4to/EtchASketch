@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 const grid = document.querySelector('#grid');
 const gridDimensions = document.querySelector('#gridDimensions');
 const buttons = document.querySelector('#buttons');
-const createGrid = document.createElement('button');
+const createGridButton = document.createElement('button');
 const defaultButton = document.createElement('button');
 const colorButton = document.createElement('button');
 
@@ -29,11 +29,11 @@ function getDim(){
 
 getDim();
 
-createGrid.textContent = "Create New Grid";
+createGridButton.textContent = "Create New Grid";
 defaultButton.textContent = "Default";
 colorButton.textContent = "Rainbow";
 
-buttons.appendChild(createGrid);
+buttons.appendChild(createGridButton);
 buttons.appendChild(defaultButton);
 buttons.appendChild(colorButton);
 
@@ -49,4 +49,11 @@ function randomColor() {
   let G = Math.floor(Math.random() * 256)
   let B = Math.floor(Math.random() * 256)
   rgb = `rgb(${R},${G},${B}`
+}
+
+function createGrid() {
+  grid.style.gridTemplateColumn = `repeat(${currentDimensions}, 1fr)`
+  grid.style.gridTemplateRows = `repeat(${currentDimensions}, 1fr)`
+  
+  
 }
