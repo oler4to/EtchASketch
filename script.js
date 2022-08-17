@@ -17,10 +17,26 @@ let currentColor = defaultColor;
 let currentMode = defaultMode;
 
 function getDim(){
-  currentDimensions = prompt('Please enter a number between(or) 1 and 100')
+  let getNum = prompt('Please enter a number between(or) 1 and 100');
+  currentDimensions = getNum;
   if(currentDimensions > 100 || currentDimensions < 1){
-    gridDimensions.textContent = "Try Again"
+    gridDimensions.textContent = "Try Again";
   } else{
-  gridDimensions.textContent = `${currentDimensions} X ${currentDimensions}`
+  gridDimensions.textContent = `${currentDimensions} X ${currentDimensions}`;
   }
+  console.log(currentDimensions);
+}
+
+getDim();
+
+createGrid.textContent = "Create New Grid";
+defaultButton.textContent = "Default";
+colorButton.textContent = "Rainbow";
+
+buttons.appendChild(createGrid);
+buttons.appendChild(defaultButton);
+buttons.appendChild(colorButton);
+
+function setGridMode(mode) {
+  currentMode = mode
 }
