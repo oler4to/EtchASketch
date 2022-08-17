@@ -27,8 +27,6 @@ function getDim(){
   console.log(currentDimensions);
 }
 
-getDim();
-
 createGridButton.textContent = "Create New Grid";
 defaultButton.textContent = "Default";
 colorButton.textContent = "Rainbow";
@@ -60,11 +58,15 @@ function createGrid() {
     cell.classList.add('cell')
     cell.style.border = "1px solid black";
     cell.addEventListener('click', () => (
-    randomColor(),
-    cell.style.background = rgb
+    cell.style.background = currentColor
     ));
     grid.appendChild(cell)
   }
 }
 
 createGrid()
+
+createGridButton.addEventListener('click', () => (
+  getDim(),
+  createGrid()
+  ))
