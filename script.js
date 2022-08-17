@@ -77,7 +77,7 @@ function createGrid() {
 function clear(){
   grid.innerHTML = ''
 }
-createGrid()
+createGrid();
 
 createGridButton.addEventListener('click', () => (
   clear(),
