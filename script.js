@@ -63,7 +63,10 @@ function createGrid() {
     }
   }
   
-  for(i = 0; i < (currentDimensions * currentDimensions); i++){
+  if(currentDimensions > 100 || currentDimensions < 1){
+    alert('Please enter a number BETWEEN(OR) 1 and 64')
+  } else{
+    for(i = 0; i < (currentDimensions * currentDimensions); i++){
     let cell = document.createElement('div')
     cell.classList.add('cell')
     cell.style.border = "1px solid black";
@@ -71,6 +74,16 @@ function createGrid() {
     changeColor(cell)
     ));
     grid.appendChild(cell)
+  }
+  if(currentDimensions > 100 || currentDimensions < 1)for(i = 0; i < (currentDimensions * currentDimensions); i++){
+    let cell = document.createElement('div')
+    cell.classList.add('cell')
+    cell.style.border = "1px solid black";
+    cell.addEventListener('click', () => (
+    changeColor(cell)
+    ));
+    grid.appendChild(cell)
+  }
   }
 }
 
